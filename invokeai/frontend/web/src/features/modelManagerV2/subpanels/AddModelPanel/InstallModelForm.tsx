@@ -1,5 +1,6 @@
 import { Button, Checkbox, Flex, FormControl, FormHelperText, FormLabel, Input } from '@invoke-ai/ui-library';
 import { useAppDispatch, useAppSelector } from 'app/store/storeHooks';
+import { ModelUploadButton } from 'features/modelManagerV2/components/ModelUploadButton';
 import { useInstallModel } from 'features/modelManagerV2/hooks/useInstallModel';
 import {
   selectShouldInstallInPlace,
@@ -83,6 +84,13 @@ export const InstallModelForm = memo(() => {
           </Flex>
         </FormControl>
       </Flex>
+
+      <FormControl orientation="vertical">
+        <FormLabel>Choose File</FormLabel>
+        <Flex alignItems="center" gap={3} w="full">
+          <ModelUploadButton />
+        </Flex>
+      </FormControl>
     </form>
   );
 });
